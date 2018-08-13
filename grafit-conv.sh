@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir conv
+
 f=''
 for I in `ls *.GFT | sort -n`; do
   filename=`echo $I | cut -d"." -f1`
@@ -18,3 +20,6 @@ for I in `ls *.GFT | sort -n`; do
   soffice --headless --convert-to xlsx:"Calc MS Excel 2007 XML" --infilter="csv:59,34,UTF8" ./conv/$filename.csv --outdir ./conv
   f="$f $filename.xlsx"
 done
+
+cd ./conv
+ssconvert -S -M ./0.xlsx $f
