@@ -27,6 +27,9 @@ function gft2xlsx() {
   ssconvert -S -M ./0.xlsx $f
 }
 
+function gft2sqlite() {
+}
+
 function main() {
   gft2xlsx
 }
