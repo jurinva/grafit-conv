@@ -34,3 +34,7 @@ AUTHOR
 ======
 
 Vladimir Yurin <jurinva@gmail.com>
+
+LICENSE
+======
+This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details
