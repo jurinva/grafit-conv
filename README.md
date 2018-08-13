@@ -6,8 +6,6 @@ GRAFIT-CONV
 SYNOPSIS
 ========
 
-**svn2git.sh** \[**-s**|**--svn** svn url] \[**-g**|**--git** git folder] \[**-c**|**--commit** commit] \[**-t**|**--target** svn folder]
-**svn2git.sh** \[**-h**|**--help**|**-v**|**--version**]
 
 DESCRIPTION
 ===========
