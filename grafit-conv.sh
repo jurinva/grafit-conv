@@ -28,6 +28,21 @@ function gft2xlsx() {
 }
 
 function gft2sqlite() {
+  sqlite3 grafit.db "create table grafit (id INTEGER PRIMARY KEY,f TEXT,l TEXT);"
+
+  for I in `ls *.GFT | sort -n`; do
+    filename=`echo $I | cut -d"." -f1`
+    > ./conv/$filename.csv
+    date=`date -r ./$I +%F`
+    desc1=`iconv -fcp1251 -tutf8 ./$I | head -1 | cut -d";" -f1 | sed 's/: /:/g'`
+    desc2=`iconv -fcp1251 -tutf8 ./$I | head -1 | cut -d";" -f2 `
+    v0s0=`sed -n '2,1p' ./$I | sed 's/ /; /g' | sed 's/\./,/g'`
+    dimension-effort=`sed -n '4,544p' ./$I | sed 's/ /; /g' | sed 's/\./,/g'`
+    if [ "$desc1" != "$desc2" ]; then desc="$filename;$date;$desc1;$desc2;$v0so;$dimension-effort"
+      else desc="$filename;$date;$desc2;$v0s0;$dimension-effort"
+    fi
+    sqlite3 grafit.db "insert into n (f,l) values ('john','smith');"
+  done
 }
 
 function main() {
